@@ -48,6 +48,17 @@ public interface LongIdReferencedRepository<T extends LongIdReference> {
     }
 
     /**
+     * Returns single entity by identifier.
+     *
+     * @param id Identifier.
+     * @return Found entity.
+     * @throws IndexOutOfBoundsException If entity not found.
+     */
+    default T mustGet(final long id) {
+        return this.get(id).orElseThrow(() -> new IndexOutOfBoundsException("Unable to find " + id));
+    }
+
+    /**
      * Returns entities matched by identifiers.
      *
      * @param ids Identifiers.
