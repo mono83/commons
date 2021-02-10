@@ -2,7 +2,6 @@ package com.github.mono83.commons.cache;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -14,14 +13,6 @@ import java.util.function.Supplier;
  * @param <V> Value type.
  */
 public interface BaselineCache<K, V> {
-    /**
-     * Returns value from cache, associated with key.
-     *
-     * @param key Cache key.
-     * @return Cache value, optional.
-     */
-    Optional<V> get(K key);
-
     /**
      * Returns value from cache.
      * If there is no values in cache, will generate it using provided generator and store to cache.

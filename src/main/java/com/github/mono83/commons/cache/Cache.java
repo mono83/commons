@@ -4,6 +4,14 @@ import java.util.Optional;
 
 public interface Cache<K, V> extends BaselineCache<K, V> {
     /**
+     * Returns value from cache, associated with key.
+     *
+     * @param key Cache key.
+     * @return Cache value, optional.
+     */
+    Optional<V> get(K key);
+
+    /**
      * Places value to cache.
      *
      * @param key   Cache key.
